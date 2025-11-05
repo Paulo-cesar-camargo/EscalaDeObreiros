@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #222;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #125ea2;
+}
+
+.calendar-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #1976d2;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+}
+
+.weekdays div {
+  padding: 10px 0;
+  text-align: center;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 0 0 8px 8px;
+}
+
+.day {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-height: 90px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.day .number {
+  font-weight: bold;
+}
+
+.person {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.person img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.ensaio {
+  background-color: #ffd54f;
+}
+
+.faespe {
+  background-color: #81c784;
+}
+
+.grupoA {
+  background-color: #64b5f6;
+}
+
+.grupoB {
+  background-color: #ba68c8;
+}
+
+.legenda {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  .calendar-container {
+    overflow-x: auto;
+  }
+
+  #calendar {
+    min-width: 560px;
+  }
+
+  .weekdays {
+    min-width: 560px;
+  }
+
+  .person img {
+    width: 22px;
+    height: 22px;
+  }
+}
+.sabado {
+  background-color: #fff3cd;
+  border: 1px solid #ffecb5;
+}
+.dev{
+    margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
