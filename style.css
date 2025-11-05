@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #f5f7fa;
+  background: #c2c7ce;
   color: #222;
   padding: 20px;
 }
@@ -161,4 +161,5 @@ button:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+
 }
