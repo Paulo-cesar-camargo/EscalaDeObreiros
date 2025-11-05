@@ -61,7 +61,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 8px;
-  background: #222;
+  background: #fff;
   padding: 10px;
   border-radius: 0 0 8px 8px;
 }
@@ -163,4 +163,5 @@ button:hover {
   gap: 15px;
 
 }
+
 
