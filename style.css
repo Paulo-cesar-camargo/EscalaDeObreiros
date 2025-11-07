@@ -163,5 +163,18 @@ button:hover {
   gap: 15px;
 
 }
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  header button, #printMonth {
+    display: none; /* esconde os botões na impressão */
+  }
+  .day {
+    border: 1px solid #ccc;
+  }
+}
+
 
 
