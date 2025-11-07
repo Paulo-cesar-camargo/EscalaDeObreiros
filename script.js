@@ -45,6 +45,9 @@ const paresPorSemana = [
   [3, 2],
   [1, 0]
 ];
+document.getElementById("printMonth").onclick = () => {
+  window.print();
+};
 
 // Retorna par [indice1, indice2] para a semana (1-based)
 function paresDaSemana(semana) {
@@ -170,3 +173,4 @@ else {
 
 // Inicializa
 gerarCalendario();
+
