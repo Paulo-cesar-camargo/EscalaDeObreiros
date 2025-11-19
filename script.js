@@ -97,7 +97,7 @@ function gerarCalendario() {
     }
     // QUINTA = Faespe
     else if (diaSemana === 4) {
-      pessoaDiv.innerHTML = `<img src="${faespe.foto}" alt="Faespe"><span>${faespe.nome}</span>`;
+      pessoaDiv.innerHTML = `<img src="${faespe.foto}" alt="Faesp"><span>${faespe.nome}</span>`;
       div.classList.add("faespe");
     }
     else {
