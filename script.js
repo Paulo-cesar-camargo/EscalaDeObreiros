@@ -15,7 +15,7 @@ const grupoB = [
 
 // Fixos: Ensaio (terça) e Faespe (quinta)
 const ensaio = { nome: "Ensaio", foto: "img/ensaio.jpg" };
-const faespe = { nome: "Faespe", foto: "img/faesp.PNG" };
+const faespe = { nome: "Faesp", foto: "img/faesp.PNG" };
 const sabado = { nome: "Grupo A/B", foto: "img/adbelem.jpeg" };
 
 
