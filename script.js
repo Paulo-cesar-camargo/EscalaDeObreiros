@@ -8,7 +8,7 @@ const grupoA = [
 
 const grupoB = [
   { nome: "Coop Eliazer",atividade:"ABRIR E FECHAR A IGREJA", cargo:"Cooperador", endereco:"Rua E", contato:"(11)98255-3053", foto: "img/eliazer.jpg" },
-  { nome: "D Reginaldo",atividade:"ABRIR E FECHAR A IGREJA", cargo:"Diácono", endereco:"Rua F", contato:"(11)96305-0243", foto: "img/reginaldo.PNG" },
+  { nome: "D Reginaldo",atividade:"ABRIR E FECHAR A IGREJA", cargo:"Diácono", endereco:"Rua F", contato:"(11)96305-0243", foto: "img/reginaldo2.PNG" },
   { nome: "Coop Manuel",atividade:"ABRIR E FECHAR A IGREJA", cargo:"Cooperador", endereco:"Rua G", contato:"(11)98980-6608", foto: "img/manuel.PNG" },
   { nome: "D Carlinhos",atividade:"ABRIR E FECHAR A IGREJA", cargo:"Diácono", endereco:"Rua H", contato:"(11)95362-4938", foto: "img/carlinhos.PNG" }
 ];
@@ -137,5 +137,6 @@ closeModal.onclick = () => modal.style.display="none";
 modal.onclick = e => { if(e.target.id==="modal") modal.style.display="none"; };
 
 gerarCalendario();
+
 
 
