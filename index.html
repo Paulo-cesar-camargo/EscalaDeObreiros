@@ -2,49 +2,57 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Escala de Trabalho</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Calendário de Escala</h1>
-    <div class="controls">
-      <button id="prev">◀ Mês Anterior</button>
-      <h2 id="monthYear"></h2>
-      <button id="next">Mês Seguinte ▶</button>
-      <button id="printMonth">🖨️ Imprimir Mês</button>
 
-    </div>
-  </header>
-
-  <div class="calendar-container">
-    <div class="weekdays">
-      <div>Dom</div>
-      <div>Seg</div>
-      <div>Ter</div>
-      <div>Qua</div>
-      <div>Qui</div>
-      <div>Sex</div>
-      <div>Sáb</div>
-    </div>
-    <div id="calendar"></div>
+<header>
+  <h1>Calendário de Escala</h1>
+  <div class="controls">
+    <button id="prev">◀</button>
+    <h2 id="monthYear"></h2>
+    <button id="next">▶</button>
+    <button id="printMonth">🖨️ Imprimir</button>
   </div>
+</header>
 
-  <footer>
-    <div class="legenda">
-      <div><span class="dot ensaio"></span> Ensaio (terça)</div>
-      <div><span class="dot faespe"></span> Faesp (quinta)</div>
-      <div><span class="dot grupoA"></span> Grupo A</div>
-      <div><span class="dot grupoB"></span> Grupo B</div>
-    </div>
-    <div class="dev">
-    <h3>Desenvolvedor </h3>
-    <p>Paulo Cesar Camargo </p>
-    </div>
-  </footer>
+<div class="calendar-container">
+  <div class="weekdays">
+    <div>Dom</div><div>Seg</div><div>Ter</div>
+    <div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+  </div>
+  <div id="calendar"></div>
+</div>
 
-  <script src="script.js"></script>
+<footer>
+  <div class="legenda">
+    <div><span class="dot ensaio"></span> Ensaio</div>
+    <div><span class="dot faespe"></span> Faesp</div>
+    <div><span class="dot grupoA"></span> Grupo A</div>
+    <div><span class="dot grupoB"></span> Grupo B</div>
+  </div>
+  <div class="dev">
+    <strong>Desenvolvedor:</strong> Paulo Cesar Camargo
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <img id="modalFoto">
+    <h2 id="modalNome"></h2>
+    <p><b>Cargo:</b> <span id="modalCargo"></span></p>
+    <p><b>Endereço:</b> <span id="modalEndereco"></span></p>
+    <p><b>Contato:</b> <span id="modalContato"></span></p>
+    <p><b>Atividade:</b> <span id="modalAtividade"></span></p>
+    
+
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
-
