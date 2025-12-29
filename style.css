@@ -7,174 +7,149 @@
 
 body {
   background: #c2c7ce;
-  color: #222;
-  padding: 20px;
+  padding: 15px;
 }
 
 header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .controls {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 button {
   background: #1976d2;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 8px 14px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-button:hover {
-  background: #125ea2;
+  padding: 8px 12px;
 }
 
 .calendar-container {
   overflow-x: auto;
-  max-width: 100%;
 }
 
 .weekdays {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   background: #1976d2;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 600;
-  border-radius: 8px 8px 0 0;
+  color: white;
 }
 
 .weekdays div {
-  padding: 10px 0;
   text-align: center;
+  padding: 8px;
 }
 
 #calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 8px;
-  background: #fff;
-  padding: 10px;
-  border-radius: 0 0 8px 8px;
+  gap: 6px;
+  background: white;
+  padding: 8px;
 }
 
 .day {
   background: #fafafa;
-  border: 1px solid #ddd;
   border-radius: 8px;
-  min-height: 90px;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-height: 75px;
+  padding: 4px;
   text-align: center;
+  cursor: pointer;
 }
 
-.day .number {
+.number {
   font-weight: bold;
 }
 
-.person {
-  margin-top: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 13px;
-}
-
 .person img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ccc;
 }
 
-.ensaio {
-  background-color: #ffd54f;
-}
-
-.faespe {
-  background-color: #81c784;
-}
-
-.grupoA {
-  background-color: #64b5f6;
-}
-
-.grupoB {
-  background-color: #ba68c8;
-}
-
-.legenda {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
+.ensaio { background: #ffd54f; }
+.faespe { background: #81c784; }
+.grupoA { background: #64b5f6; }
+.grupoB { background: #ba68c8; }
+.sabado { background: #fff3cd; }
 
 .dot {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  margin-right: 5px;
+  display: inline-block;
 }
 
-/* Responsividade */
-@media (max-width: 700px) {
-  .calendar-container {
-    overflow-x: auto;
-  }
+.dot.ensaio { background: #ffd54f; }
+.dot.faespe { background: #81c784; }
+.dot.grupoA { background: #64b5f6; }
+.dot.grupoB { background: #ba68c8; }
 
-  #calendar {
-    min-width: 560px;
-  }
-
-  .weekdays {
-    min-width: 560px;
-  }
-
-  .person img {
-    width: 22px;
-    height: 22px;
-  }
-}
-.sabado {
-  background-color: #fff3cd;
-  border: 1px solid #ffecb5;
-}
-.dev{
-    margin-top: 25px;
+.legenda {
+  margin-top: 15px;
   display: flex;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
+}
 
+.dev {
+  margin-top: 10px;
+  text-align: center;
 }
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#closeModal {
+  font-size: 26px;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .person img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* PRINT */
 @media print {
-  body {
-    background: white;
-    color: black;
-  }
-  header button, #printMonth {
-    display: none; /* esconde os botões na impressão */
-  }
-  .day {
-    border: 1px solid #ccc;
-  }
+  button { display: none; }
+  body { background: rgb(255, 255, 255); }
 }
+
 
 
 
