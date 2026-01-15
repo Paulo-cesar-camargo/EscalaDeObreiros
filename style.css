@@ -28,6 +28,7 @@ button {
   border: none;
   border-radius: 6px;
   padding: 8px 12px;
+  cursor: pointer;
 }
 
 .calendar-container {
@@ -73,12 +74,13 @@ button {
   border-radius: 50%;
 }
 
+/* CORES */
+.grupoA { background: #64b5f6; }
 .ensaio { background: #ffd54f; }
 .faespe { background: #81c784; }
-.grupoA { background: #64b5f6; }
-.grupoB { background: #ba68c8; }
 .sabado { background: #fff3cd; }
 
+/* LEGENDA */
 .dot {
   width: 12px;
   height: 12px;
@@ -86,10 +88,9 @@ button {
   display: inline-block;
 }
 
+.dot.grupoA { background: #64b5f6; }
 .dot.ensaio { background: #ffd54f; }
 .dot.faespe { background: #81c784; }
-.dot.grupoA { background: #64b5f6; }
-.dot.grupoB { background: #ba68c8; }
 
 .legenda {
   margin-top: 15px;
@@ -147,9 +148,8 @@ button {
 /* PRINT */
 @media print {
   button { display: none; }
-  body { background: rgb(255, 255, 255); }
+  body { background: #fff; }
 }
-
 
 
 
