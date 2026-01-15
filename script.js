@@ -16,9 +16,9 @@ const grupo = [
 ];
 
 // EVENTOS FIXOS
-const ensaio = { nome:"Ensaio", atividade:"Ensaio", foto:"img/ensaio.jpg" };
-const faespe = { nome:"Faesp", atividade:"Faesp", foto:"img/faesp.PNG" };
-const sabado = { nome:"Escala a Definir", atividade:"", foto:"img/adbelem.jpeg" };
+const ensaio = { nome:"ENSAIO", atividade:"Ensaio", foto:"img/ensaio.jpg" };
+const faespe = { nome:"FAESP", atividade:"Faesp", foto:"img/faesp.PNG" };
+const sabado = { nome:"ESCALA A DEFINIR", atividade:"", foto:"img/adbelem.jpeg" };
 
 // ===============================
 // DOM
@@ -140,4 +140,5 @@ function gerarCalendario(){
 }
 
 gerarCalendario();
+
 
