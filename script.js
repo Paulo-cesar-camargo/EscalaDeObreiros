@@ -11,9 +11,6 @@ const grupo = [
   { nome:"D Reginaldo", cargo:"Diácono", endereco:"Rua F", contato:"(11) 96305-0243", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/reginaldo2.PNG"},
   { nome:"Coop Paulo", cargo:"Cooperador", endereco:"Av: Fortunato Camargo 1075", contato:"(11) 91356-3576", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Cpaulo.PNG" }
 
-
-
-
 ];
 
 // EVENTOS FIXOS
@@ -21,7 +18,10 @@ const ensaio = { nome:"Ensaio", atividade:"Ensaio", foto:"img/ensaio.jpg" };
 const faespe = { nome:"Faesp", atividade:"Faesp", foto:"img/faesp.PNG" };
 const sabado = { nome:"Escala a Definir", atividade:"", foto:"img/adbelem.jpeg" };
 
-let indicePessoa = 0;
+// ===============================
+// ÍNDICE CONTÍNUO (LOCALSTORAGE)
+// ===============================
+let indicePessoa = parseInt(localStorage.getItem("indiceEscala")) || 0;
 let dataAtual = new Date();
 
 // DOM
@@ -48,14 +48,19 @@ function mudarMes(delta){
   gerarCalendario();
 }
 
+// ===============================
+// GERAR CALENDÁRIO
+// ===============================
 function gerarCalendario(){
   calendario.innerHTML = "";
-  indicePessoa = 0;
 
   const mes = dataAtual.getMonth();
   const ano = dataAtual.getFullYear();
 
-  mesAnoEl.textContent = dataAtual.toLocaleString("pt-BR",{month:"long",year:"numeric"});
+  mesAnoEl.textContent = dataAtual.toLocaleString("pt-BR", {
+    month:"long",
+    year:"numeric"
+  });
 
   const primeiroDia = new Date(ano, mes, 1).getDay();
   const diasNoMes = new Date(ano, mes + 1, 0).getDate();
@@ -81,9 +86,11 @@ function gerarCalendario(){
     else if(diaSemana===4){ pessoa=faespe; classe="faespe"; }
     else if(diaSemana===6){ pessoa=sabado; classe="sabado"; }
     else if([0,1,3,5].includes(diaSemana)){
-      pessoa=grupo[indicePessoa];
-      classe="grupoA";
-      indicePessoa = (indicePessoa+1) % grupo.length;
+      pessoa = grupo[indicePessoa];
+      classe = "grupoA";
+
+      indicePessoa = (indicePessoa + 1) % grupo.length;
+      localStorage.setItem("indiceEscala", indicePessoa);
     }
 
     if(pessoa){
@@ -110,6 +117,4 @@ function gerarCalendario(){
 }
 
 gerarCalendario();
-
-
 
