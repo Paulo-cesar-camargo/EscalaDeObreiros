@@ -1,34 +1,34 @@
 // ===============================
-// GRUPO ÚNICO (ESCALA SEQUENCIAL)
+// CONFIGURAÇÕES
 // ===============================
+const DATA_BASE = new Date(2025, 0, 1); // 01/01/2025 (pode mudar se quiser)
+
+// PESSOAS (ORDEM FIXA)
 const grupo = [
+  { nome:"Coop Paulo", cargo:"Cooperador", endereco:"Av: Fortunato Camargo 1075", contato:"(11) 91356-3576", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Cpaulo.PNG" },
+  { nome:"D Paulo", cargo:"Diácono", endereco:"Rua B", contato:"(11) 94685-8301", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Dpaulo.jpg" },
+  { nome:"Coop Ueverson", cargo:"Cooperador", endereco:"Rua Curitiba", contato:"(11) 94493-4326", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/ueversom.jpg" },
   { nome:"D João", cargo:"Diácono", endereco:"Rua D", contato:"(11) 98553-8590", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Djoao.jpg" },
   { nome:"Coop Eliazer", cargo:"Cooperador", endereco:"Rua E", contato:"(11) 98255-3053", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/eliazer.jpg" },
-  { nome:"D Paulo", cargo:"Diácono", endereco:"Rua B", contato:"(11) 94685-8301", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Dpaulo.jpg" },
+  { nome:"D Reginaldo", cargo:"Diácono", endereco:"Rua F", contato:"(11) 96305-0243", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/reginaldo2.PNG" },
   { nome:"Coop Manuel", cargo:"Cooperador", endereco:"Rua G", contato:"(11) 98980-6608", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/manuel.PNG" },
-  { nome:"D Carlinhos", cargo:"Diácono", endereco:"Rua H", contato:"(11) 95362-4938", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/carlinhos.PNG" },
-  { nome:"Coop Ueverson", cargo:"Cooperador", endereco:"Rua Curitiba", contato:"(11) 94493-4326", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/ueversom.jpg" },
-  { nome:"D Reginaldo", cargo:"Diácono", endereco:"Rua F", contato:"(11) 96305-0243", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/reginaldo2.PNG"},
-  { nome:"Coop Paulo", cargo:"Cooperador", endereco:"Av: Fortunato Camargo 1075", contato:"(11) 91356-3576", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Cpaulo.PNG" }
-
+  { nome:"D Carlinhos", cargo:"Diácono", endereco:"Rua H", contato:"(11) 95362-4938", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/carlinhos.PNG" }
 ];
 
 // EVENTOS FIXOS
 const ensaio = { nome:"Ensaio", atividade:"Ensaio", foto:"img/ensaio.jpg" };
 const faespe = { nome:"Faesp", atividade:"Faesp", foto:"img/faesp.PNG" };
-const sabado = { nome:"Escala a Definir", atividade:"", foto:"img/adbelem.jpeg" };
+const sabado = { nome:"Sábado", atividade:"", foto:"img/adbelem.jpeg" };
 
 // ===============================
-// ÍNDICE CONTÍNUO (LOCALSTORAGE)
-// ===============================
-let indicePessoa = parseInt(localStorage.getItem("indiceEscala")) || 0;
-let dataAtual = new Date();
-
 // DOM
-const mesAnoEl = document.getElementById("monthYear");
+// ===============================
+let dataAtual = new Date();
 const calendario = document.getElementById("calendar");
-const modal = document.getElementById("modal");
+const mesAnoEl = document.getElementById("monthYear");
 
+// MODAL
+const modal = document.getElementById("modal");
 const modalFoto = document.getElementById("modalFoto");
 const modalNome = document.getElementById("modalNome");
 const modalCargo = document.getElementById("modalCargo");
@@ -43,9 +43,27 @@ document.getElementById("printMonth").onclick = () => window.print();
 document.getElementById("closeModal").onclick = () => modal.style.display="none";
 modal.onclick = e => { if(e.target.id==="modal") modal.style.display="none"; };
 
+// ===============================
+// FUNÇÕES
+// ===============================
 function mudarMes(delta){
   dataAtual.setMonth(dataAtual.getMonth() + delta);
   gerarCalendario();
+}
+
+// Conta quantos dias de ESCALA já ocorreram desde a data base
+function contarDiasEscala(data){
+  let count = 0;
+  let d = new Date(DATA_BASE);
+
+  while(d < data){
+    const diaSemana = d.getDay();
+    if([0,1,3,5].includes(diaSemana)){
+      count++;
+    }
+    d.setDate(d.getDate() + 1);
+  }
+  return count;
 }
 
 // ===============================
@@ -77,30 +95,33 @@ function gerarCalendario(){
     div.className = "day";
     div.innerHTML = `<div class="number">${dia}</div>`;
 
-    const pessoaDiv = document.createElement("div");
-    pessoaDiv.className = "person";
-
     let pessoa=null, classe="";
 
-    if(diaSemana===2){ pessoa=ensaio; classe="ensaio"; }
-    else if(diaSemana===4){ pessoa=faespe; classe="faespe"; }
-    else if(diaSemana===6){ pessoa=sabado; classe="sabado"; }
+    if(diaSemana===2){
+      pessoa = ensaio; classe="ensaio";
+    }
+    else if(diaSemana===4){
+      pessoa = faespe; classe="faespe";
+    }
+    else if(diaSemana===6){
+      pessoa = sabado; classe="sabado";
+    }
     else if([0,1,3,5].includes(diaSemana)){
-      pessoa = grupo[indicePessoa];
-      classe = "grupoA";
-
-      indicePessoa = (indicePessoa + 1) % grupo.length;
-      localStorage.setItem("indiceEscala", indicePessoa);
+      const diasPassados = contarDiasEscala(data);
+      const indice = diasPassados % grupo.length;
+      pessoa = grupo[indice];
+      classe="grupoA";
     }
 
     if(pessoa){
-      pessoaDiv.innerHTML = `<img src="${pessoa.foto}"><span>${pessoa.nome}</span>`;
+      div.innerHTML += `
+        <div class="person">
+          <img src="${pessoa.foto}">
+          <span>${pessoa.nome}</span>
+        </div>`;
       div.classList.add(classe);
       div.dataset.pessoa = JSON.stringify(pessoa);
     }
-
-    div.appendChild(pessoaDiv);
-    calendario.appendChild(div);
 
     div.onclick = ()=>{
       if(!div.dataset.pessoa) return;
@@ -113,8 +134,9 @@ function gerarCalendario(){
       modalContato.textContent=p.contato||"";
       modalAtividade.textContent=p.atividade||"";
     };
+
+    calendario.appendChild(div);
   }
 }
 
 gerarCalendario();
-
