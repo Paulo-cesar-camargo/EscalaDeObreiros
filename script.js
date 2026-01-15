@@ -18,7 +18,7 @@ const grupo = [
 // EVENTOS FIXOS
 const ensaio = { nome:"Ensaio", atividade:"Ensaio", foto:"img/ensaio.jpg" };
 const faespe = { nome:"Faesp", atividade:"Faesp", foto:"img/faesp.PNG" };
-const sabado = { nome:"Sábado", atividade:"", foto:"img/adbelem.jpeg" };
+const sabado = { nome:"Escala a Definir", atividade:"", foto:"img/adbelem.jpeg" };
 
 // ===============================
 // DOM
@@ -140,3 +140,4 @@ function gerarCalendario(){
 }
 
 gerarCalendario();
+
