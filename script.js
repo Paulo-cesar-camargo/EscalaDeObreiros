@@ -7,12 +7,13 @@ const DATA_BASE = new Date(2025, 0, 1); // 01/01/2025 (pode mudar se quiser)
 const grupo = [
   { nome:"Coop Paulo", cargo:"Cooperador", endereco:"Av: Fortunato Camargo 1075", contato:"(11) 91356-3576", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Cpaulo.PNG" },
   { nome:"D Paulo", cargo:"Diácono", endereco:"Rua B", contato:"(11) 94685-8301", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Dpaulo.jpg" },
-  { nome:"Coop Ueverson", cargo:"Cooperador", endereco:"Rua Curitiba", contato:"(11) 94493-4326", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/ueversom.jpg" },
+  { nome:"D Carlinhos", cargo:"Diácono", endereco:"Rua H", contato:"(11) 95362-4938", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/carlinhos.PNG" },
   { nome:"D João", cargo:"Diácono", endereco:"Rua D", contato:"(11) 98553-8590", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/Djoao.jpg" },
   { nome:"Coop Eliazer", cargo:"Cooperador", endereco:"Rua E", contato:"(11) 98255-3053", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/eliazer.jpg" },
   { nome:"D Reginaldo", cargo:"Diácono", endereco:"Rua F", contato:"(11) 96305-0243", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/reginaldo2.PNG" },
   { nome:"Coop Manuel", cargo:"Cooperador", endereco:"Rua G", contato:"(11) 98980-6608", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/manuel.PNG" },
-  { nome:"D Carlinhos", cargo:"Diácono", endereco:"Rua H", contato:"(11) 95362-4938", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/carlinhos.PNG" }
+  { nome:"Coop Ueverson", cargo:"Cooperador", endereco:"Rua Curitiba", contato:"(11) 94493-4326", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/ueversom.jpg" }
+
 ];
 
 // EVENTOS FIXOS
@@ -140,5 +141,6 @@ function gerarCalendario(){
 }
 
 gerarCalendario();
+
 
 
