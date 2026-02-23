@@ -12,7 +12,7 @@ const grupo = [
   { nome:"Coop Eliazer", cargo:"Cooperador", endereco:"Rua E", contato:"(11) 98255-3053", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/eliazer.jpg" },
   { nome:"D Reginaldo", cargo:"Diácono", endereco:"Rua F", contato:"(11) 96305-0243", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/reginaldo2.PNG" },
   { nome:"Coop Manuel", cargo:"Cooperador", endereco:"Rua G", contato:"(11) 98980-6608", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/manuel.PNG" },
-  { nome:"Coop Ueverson", cargo:"Cooperador", endereco:"Rua Curitiba", contato:"(11) 94493-4326", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/ueversom.jpg" }
+  { nome:"D zezinho", cargo:"Diácono", endereco:"Rua Curitiba", contato:"(11) 95083-4846", atividade:"ABRIR E FECHAR A IGREJA", foto:"img/zezinho.jpg" }
 
 ];
 
@@ -141,6 +141,7 @@ function gerarCalendario(){
 }
 
 gerarCalendario();
+
 
 
 
