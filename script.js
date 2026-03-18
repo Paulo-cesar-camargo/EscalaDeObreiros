@@ -34,7 +34,7 @@ const sabado2 = {
   nome:"SANTA CEIA NA SEDE",
   atividade:"Segundo sábado do mês",
   foto:"img/adbelem.jpeg",
-  nomes:[]
+  membros:["Coop Manuel","D Paulo","D Reginaldo","D Carlinhos","D João","Coop Eliazer","D zezinho","Coop Paulo"]
 };
 const sabado3 = {
   nome:"CULTO DOS VARÕES",
@@ -46,7 +46,7 @@ const sabado4 = {
   nome:"CULTO DOS ADOLESCENTES",
   atividade:"Quarto sábado do mês",
   foto:"img/adolecentes.png",
-  membros:["Coop Manuel","D Paulo",""]
+  membros:["Coop Manuel","D Paulo","D Reginaldo"]
 };
 const sabado5 = {
   nome:"ESCALA A DEFINIR",
