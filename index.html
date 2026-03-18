@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -11,10 +11,10 @@
 <header>
   <h1>Calendário de Escala</h1>
   <div class="controls">
-    <button id="prev">◀</button>
+    <button id="prev" aria-label="Mês anterior">◀</button>
     <h2 id="monthYear"></h2>
-    <button id="next">▶</button>
-    <button id="printMonth">🖨️ Imprimir</button>
+    <button id="next" aria-label="Próximo mês">▶</button>
+    <button id="printMonth">Imprimir</button>
   </div>
 </header>
 
@@ -41,17 +41,17 @@
 <div id="modal" class="modal">
   <div class="modal-content">
     <span id="closeModal">&times;</span>
-    <img id="modalFoto">
+    <div id="modalFotos" class="modal-fotos"></div>
     <h2 id="modalNome"></h2>
-    <p><b>Cargo:</b> <span id="modalCargo"></span></p>
-    <p><b>Endereço:</b> <span id="modalEndereco"></span></p>
-    <p><b>Contato:</b> <span id="modalContato"></span></p>
+    <p id="rowCargo"><b>Cargo:</b> <span id="modalCargo"></span></p>
+    <p id="rowEndereco"><b>Endereço:</b> <span id="modalEndereco"></span></p>
+    <p id="rowContato"><b>Contato:</b> <span id="modalContato"></span></p>
     <p><b>Atividade:</b> <span id="modalAtividade"></span></p>
   </div>
 </div>
 
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
 <script src="script.js"></script>
 </body>
 </html>
-
-
